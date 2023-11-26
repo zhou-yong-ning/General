@@ -8,7 +8,7 @@ def split_pdf(input_path, page_numbers, path):
     output_path = os.path.join(path, input_path + '.pdf')  # 拆分后的文件名
     for page_number in page_numbers:
         output_pdf.add_page(input_pdf.pages[(page_number - 1)])  # 页码从0开始，所以需要减1
-        output_path = os.path.join(path, input_path + '.pdf')  # 拆分后的文件名
+        output_path = os.path.join(path, input_path)  # 拆分后的文件名
     with open(output_path, "wb") as output_file:
         output_pdf.write(output_file)
 
